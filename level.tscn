@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dagvmjtry8s4p"]
+[gd_scene load_steps=5 format=3 uid="uid://dagvmjtry8s4p"]
 
 [ext_resource type="PackedScene" uid="uid://c0m3vhcmqio8x" path="res://player.tscn" id="1_fj3ey"]
+
+[sub_resource type="Environment" id="Environment_5hm5c"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o23mo"]
 size = Vector2(10, 50)
@@ -9,6 +11,12 @@ size = Vector2(10, 50)
 points = PackedVector3Array(-5.1773, 0.17727, -25.1773, 5.10638, 0.17727, 25.1773, 5.10638, 0.17727, -25.1773, -5.1773, 0.17727, 25.1773)
 
 [node name="World" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_5hm5c")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 30, 0)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -20,6 +28,3 @@ shape = SubResource("ConvexPolygonShape3D_3ec7s")
 
 [node name="Player" parent="." instance=ExtResource("1_fj3ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51818, 24.5687)
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31.996, 0)
