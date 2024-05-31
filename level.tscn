@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dagvmjtry8s4p"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ruudk"]
+size = Vector2(10, 50)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cuggm"]
+points = PackedVector3Array(-5.1773, 0.17727, -25.1773, 5.10638, 0.17727, 25.1773, 5.10638, 0.17727, -25.1773, -5.1773, 0.17727, 25.1773)
+
+[node name="World" type="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("PlaneMesh_ruudk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("ConvexPolygonShape3D_cuggm")
