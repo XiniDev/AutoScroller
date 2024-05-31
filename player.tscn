@@ -17,8 +17,7 @@ mesh = SubResource("CapsuleMesh_oce7v")
 shape = SubResource("ConvexPolygonShape3D_wg3oo")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999863, 0.0165451, 0, -0.0165451, 0.999863, 0, 0, 0, 1, 0, 5.03818, 11.3627)
-fov = 66.4
-near = 0.056
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 11)
+near = 0.092
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
