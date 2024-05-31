@@ -19,4 +19,7 @@ mesh = SubResource("PlaneMesh_o23mo")
 shape = SubResource("ConvexPolygonShape3D_3ec7s")
 
 [node name="Player" parent="." instance=ExtResource("1_fj3ey")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51818, 24.5687)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31.996, 0)
