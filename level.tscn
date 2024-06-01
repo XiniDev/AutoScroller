@@ -28,3 +28,23 @@ shape = SubResource("ConvexPolygonShape3D_3ec7s")
 
 [node name="Player" parent="." instance=ExtResource("1_fj3ey")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51818, -17.7626)
+
+[node name="Left Wall" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5, 2.856, -1.865)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Left Wall"]
+visible = false
+mesh = SubResource("PlaneMesh_o23mo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Left Wall"]
+shape = SubResource("ConvexPolygonShape3D_3ec7s")
+
+[node name="Right Wall" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5, 2.856, -1.865)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Right Wall"]
+visible = false
+mesh = SubResource("PlaneMesh_o23mo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Right Wall"]
+shape = SubResource("ConvexPolygonShape3D_3ec7s")
