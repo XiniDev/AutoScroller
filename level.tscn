@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dagvmjtry8s4p"]
+[gd_scene load_steps=6 format=3 uid="uid://dagvmjtry8s4p"]
 
 [ext_resource type="PackedScene" uid="uid://c0m3vhcmqio8x" path="res://player.tscn" id="1_fj3ey"]
 
@@ -6,6 +6,8 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_o23mo"]
 size = Vector2(10, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rlter"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3ec7s"]
 points = PackedVector3Array(-5.1773, 0.17727, -25.1773, 5.10638, 0.17727, 25.1773, 5.10638, 0.17727, -25.1773, -5.1773, 0.17727, 25.1773)
@@ -15,13 +17,11 @@ points = PackedVector3Array(-5.1773, 0.17727, -25.1773, 5.10638, 0.17727, 25.177
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5hm5c")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 30, 0)
-
 [node name="Floor" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 mesh = SubResource("PlaneMesh_o23mo")
+surface_material_override/0 = SubResource("StandardMaterial3D_rlter")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
 shape = SubResource("ConvexPolygonShape3D_3ec7s")
@@ -30,7 +30,7 @@ shape = SubResource("ConvexPolygonShape3D_3ec7s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.51818, -17.7626)
 
 [node name="Left Wall" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5, 2.856, -1.865)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 5, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Left Wall"]
 visible = false
@@ -40,7 +40,7 @@ mesh = SubResource("PlaneMesh_o23mo")
 shape = SubResource("ConvexPolygonShape3D_3ec7s")
 
 [node name="Right Wall" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5, 2.856, -1.865)
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -5, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Right Wall"]
 visible = false
